@@ -19,17 +19,17 @@ const Product = () => {
   return (
     <div>
       <div className="">
-        <div className="flex">
-          <input onChange={handletodo} className='bg-blue-300' type="text" />
-          <button onClick={() => setShow([...show, ipt])}>Create</button>
+        <div className="flex pt-10 pb-5 px-5">
+          <input onChange={handletodo} className='bg-blue-300 py-2 px-5 rounded-2xl border border-black' type="text" />
+          <button className='px-5 py-1 rounded-xl ml-5 bg-blue-400' onClick={() => setShow([...show, ipt])}>Create</button>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 px-10">
           <div className="">
             <ul>
               {show.map((item, index) =>{
-                return <li className='flex gap-5 py-2' key={index}>
+                return <li className='flex gap-5 py-2 text-2xl' key={index}>
                   {item} 
-                  <button className='py-1 rounded-xl px-2 bg-blue-400' onClick={handleDelete}>delete</button>
+                  <button className='py-1 rounded-xl px-2 bg-blue-400 text-lg' onClick={handleDelete}>delete</button>
                 </li>
               })}
               
@@ -38,7 +38,7 @@ const Product = () => {
         </div>
 
       </div>
-        <div className="flex flex-wrap">
+      <div className="flex flex-wrap">
         {info.map((item) => (
             <Link to={`/product/${item.id}`} key={item.id} className='lg:w-1/3 w-1/2 p-1 lg:p-3 relative'>
             <div >
@@ -60,7 +60,7 @@ const Product = () => {
           </div>
             </Link>
           ))}
-          </div> 
+          </div>
     </div>
   )
 }
